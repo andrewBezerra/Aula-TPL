@@ -6,7 +6,7 @@ namespace Aula_TPL
 {
     class Program
     {
-        public static string WordFirstLetterToEndplusayAndLowerPlusAy(string word)
+        public static string WordFirstLetterToEndplusayAndLower(string word)
         {
 
             var palavramodificada = word.Substring(1, word.Length - 1) + word.Substring(0, 1) + "ay";
@@ -23,7 +23,7 @@ namespace Aula_TPL
                 int index = i;
                 Task.Factory.StartNew(() =>
                  {
-                     words[index] = WordFirstLetterToEndplusayAndLowerPlusAy(words[index]);
+                     words[index] = WordFirstLetterToEndplusayAndLower(words[index]);
                  }, TaskCreationOptions.AttachedToParent | TaskCreationOptions.LongRunning);
 
             }
